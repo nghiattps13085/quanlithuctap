@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đang tuyển</title>
+    <link rel="shortcut icon" href="view/images/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/css/bootstrap-datetimepicker.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
+    <script>
+        tinymce.init({
+            selector: 'textarea'
+        });
+    </script>
+
+
+
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/script.js "></script>
+</head>
+
+<body>
+    <header id="header" class="fixed-top shadow-sm border-bottom bg-light">
+        <div class="wrap d-flex justify-content-between align-items-center">
+            <div id="header-menu" class="col p-0">
+                <button id="sidebarToggle" class="btn btn-light border-right rounded-0 p-4">
+                            <i class="fas fa-bars"></i>
+                            <span class="d-none d-md-inline ml-3">MENU</span>
+                    </button>
+            </div>
+            <a id="header-logo" href="#" class="col text-center">
+                <img src="images/logo-2.png" alt="">
+            </a>
+            <div id="header-login" class="col p-0">
+                <div class="d-none d-lg-flex justify-content-end h-100 ">
+                    <a data-toggle="modal" href="#login" class="btn btn-light rounded-0  h-100 border-left  font-weight-500 p-4" role="button" aria-pressed="true">SINH VIÊN</a>
+                    <a data-toggle="modal" href="#login" class="btn btn-primary  rounded-0  h-100 border-left   font-weight-500 p-4" role="button" aria-pressed="true">DOANH NGHIỆP</a>
+                </div>
+            </div>
+        </div>
+    </header>>
+    <!-- Show box login -->
+    <div class="modal fade" id="login">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2 class="d-inline"> Đăng Tuyển</h2>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <!-- Modal body -->
+                <div class="modal-body row ">
+                    <div class="d-none d-lg-inline col-6">
+                        <img src="images/login.jpg" alt="">
+                    </div>
+                    <div class="col-lg-6 ">
+                        <!-- <h3>Đăng Nhập</h3> -->
+                        <form action="index.php?ctrl=home" class="my-5">
+                            <div class="form-group">
+                                <label for="">Tên đăng nhập</label>
+                                <input type="text" name="user" id="" class="form-control" placeholder="" aria-describedby="helpId">
+                                <small id="helpId" class="text-muted"></small>
+                            </div>
+                            <div class="form-group">
+                                <label for="">Mật khẩu</label>
+                                <input type="password" name="pass" id="" class="form-control" placeholder="" aria-describedby="helpId">
+                                <small id="helpId" class="text-muted"></small>
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-block">Đăng nhập</button>
+                        </form>
+                        <a href="" class="text-primary">Quên mật khẩu ?</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!-- Show menu -->
+    <nav id="nav-togger" class="border shadow-lg">
+        <div class="list-group">
+            <div class="d-flex d-lg-none  list-group-item list-group-item-action p-0 mb-3">
+                <a data-toggle="modal" href="#login" class="btn btn-light rounded-0  h-100 border w-50  py-3" role="button" aria-pressed="true">SINH VIÊN</a>
+                <a data-toggle="modal" href="#login" class="btn btn-primary  rounded-0  h-100 border w-50  py-3" role="button" aria-pressed="true">DOANH NGHIỆP</a>
+            </div>
+            <button type="button" class="list-group-item list-group-item-action rounded-0   py-3 active ">Trang chủ</button>
+            <button type="button" class="list-group-item list-group-item-action rounded-0  py-3">Hỗ trợ</button>
+            <button type="button" class="list-group-item list-group-item-action rounded-0  py-3">Liên lạc</button>
+            <button type="button" class="list-group-item list-group-item-action rounded-0  py-3">Về chúng tôi</button>
+            <button type="button" class="list-group-item list-group-item-action rounded-0  py-3">Hướng dẫn đăng bài</button>
+            <button type="button" class="list-group-item list-group-item-action rounded-0  py-3">Hướng dẫn ứng tuyển</button>
+        </div>
+    </nav>
+    <div id="overlay-nav"></div>
+    <main id="main">
+        <div class="container">
+            <div id="doanhnghiep">
+                <div class="row mt-4 m-0 py-3">
+                    <div class="h-box-detail p-3 h-box-right shadow Nghia">
+                        <div class="col-12">
+                            <div class="alert alert-primary" role="alert">
+                                <h2>Đăng Tuyển</h2>
+                            </div>
+                            <input type="text" class="N-ninput form-control" placeholder="Tiêu đề bài đăng*">
+                            <input type="text" class="N-ninput form-control" placeholder="Vị trí thực tập*">
+                            <input type="text" class="N-ninput form-control" placeholder="Địa chỉ làm việc*">
+                            <hr>
+                            <div class="mb-4">
+                                <h4 class="text-primary">Option cho sinh viên</h4>
+                            </div>
+                            <div class="N-input mb-4"><input type="number" class="N-ip form-control" placeholder="Lương thấp nhất*">
+                                <span class="VND">VND</span></div>
+                            <div class="N-input mb-4"><input type="number" class="N-ip form-control" placeholder="Lương cao nhất*">
+                                <span class="VND">VND</span></div>
+                            <div class="N-input mb-4"><input type="number" class="N-ip form-control" placeholder="thời gian thực tập*">
+                                <span class="VND">Tháng</span></div>
+                            <div class="N-input mb-4"><input type="number" class="N-ip form-control" style="width:390px;" placeholder="Số lượng thực tập sinh cần tuyển*">
+                                <span class="VND"></span></div>
+                        </div>
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-7">
+                                    <div class="input-group mb-3">
+
+                                        <div class="input-group-prepend">
+                                            <label class="input-group-text bg-primary text-white " for="gender3">Hình thức</label>
+                                        </div>
+                                        <select class="custom-select" style="width:100px;" id="gender3">
+                                          <option selected>Thực tập sinh</option>                      
+                                        </select>
+
+
+                                        <select class="custom-select" id="gender3">
+                                            <option value="1" active >Full-time</option>
+                                            <option value="2" >Part-time</option>
+                                          </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <hr>
+                            <h4 class="text-primary mb-3">Phúc lợi</h4>
+                            <div class="row">
+                                <div class="col-4">
+                                    <!-- Default inline 3-->
+                                    <div class="custom-control custom-checkbox  mb-2">
+                                        <input type="checkbox" class="custom-control-input " id="defaultInline3">
+                                        <label class="custom-control-label" for="defaultInline3"> <i class="fas fa-award"></i> Chế độ thưởng</label>
+                                    </div>
+                                    <div class="custom-control custom-checkbox  mb-2">
+                                        <input type="checkbox" class="custom-control-input" id="defaultInline4">
+                                        <label class="custom-control-label" for="defaultInline4"><i class="	fas fa-atom "></i> Chương trình đào tạo</label>
+                                    </div>
+                                    <div class="custom-control custom-checkbox  mb-2">
+                                        <input type="checkbox" class="custom-control-input" id="defaultInline5">
+                                        <label class="custom-control-label" for="defaultInline5"><i class="fa fa-level-up"></i> Tăng lương</label>
+                                    </div>
+                                </div>
+                                <div class="col-3">
+                                    <div class="custom-control custom-checkbox  mb-2">
+                                        <input type="checkbox" class="custom-control-input" id="defaultInline6">
+                                        <label class="custom-control-label" for="defaultInline6"><i class="fa fa-laptop"></i> Laptop</label>
+                                    </div>
+                                    <div class="custom-control custom-checkbox  mb-2">
+                                        <input type="checkbox" class="custom-control-input" id="defaultInline2">
+                                        <label class="custom-control-label" for="defaultInline2"><i class="fas fa-suitcase"></i> Du lịch</label>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <!-- Default inline 2-->
+                            <!-- Default inline 2-->
+                            <!-- Default inline 3-->
+                            <hr>
+                            <h4 class="mb-4 text-primary">Mô tả công việc</h4>
+                            <textarea name="" id="" cols="30" rows="10"></textarea>
+                            <hr>
+                            <h4 class="mb-3 text-primary">Yêu cầu công việc</h4>
+                            <textarea name="" id="" cols="30" rows="10"></textarea>
+                            <hr>
+                            <h5 class="mb-3 text-primary">Các thông tin cơ bản khác</h5>
+                            <textarea name="" id="" cols="30" rows="10"></textarea>
+                            <button class="btn btn-primary mt-5 float-right">Cập nhật</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+    <!-- JS Boostrap -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js " integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo " crossorigin="anonymous "></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js " integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1 " crossorigin="anonymous "></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js " integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM " crossorigin="anonymous "></script>
+    <!-- My script -->
+    <script src="js/script.js "></script>
+    <script src="ckeditor/ckeditor.js "></script>
+    <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+
+    <script>
+        CKEDITOR.replace('N-content');
+        CKEDITOR.replace('N-content1');
+        CKEDITOR.replace('N-content2');
+        // Material Select Initialization
+    </script>
+
+
+
+
+</body>
+
+</html>

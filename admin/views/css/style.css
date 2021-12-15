@@ -1,0 +1,186 @@
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+        }
+        
+        html {
+            font-family: sans-serif;
+            line-height: 1.15;
+            -webkit-text-size-adjust: 100%;
+            -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+        }
+        
+        body {
+            position: fixed;
+            top: 0;
+            right: 0;
+            left: 0;
+        }
+        
+        header {
+            height: 60px;
+        }
+        
+        main {
+            height: calc(100vh - 90px);
+        }
+        
+        footer {
+            height: 30px;
+        }
+        
+        aside .card .btn {
+            font-size: 0.9rem !important;
+        }
+        
+        aside .card-body {
+            padding: 10px 0;
+        }
+        /* Nghĩa */
+        /*     
+    input[type=number]::-webkit-inner-spin-button,
+    input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+    } */
+        
+        .Nghia-admin-tb {
+            border-collapse: collapse;
+            margin: 25px 0;
+            font-size: 0.9em;
+            border-radius: 5px 5px 0 0;
+            overflow: hidden;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+        }
+        
+        .Nghia-admin-tb thead tr {
+            text-align: center;
+            font-weight: bold;
+            color: white;
+        }
+        
+        .Nghia-admin-tb th,
+        .Nghia-admin-tb td {
+            padding: 12px 15px;
+            text-align: center;
+        }
+        
+        .Nghia-admin-tb td a {
+            text-decoration: none;
+            font-size: 20pt;
+        }
+        
+        .Nghia-admin-tb tbody tr {
+            border-bottom: 1px solid white;
+        }
+        
+        .Nghia-admin-tb tbody tr:last-of-type {
+            border-bottom: 4px solid #4993ec;
+        }
+        /* Nghia radio */
+        
+        .wrapper {
+            background: #497dd0;
+            padding: 100px;
+        }
+        
+        .toggle_radio {
+            position: relative;
+            background: rgba(255, 255, 255, .1);
+            margin: 4px auto;
+            overflow: hidden;
+            padding: 0 !important;
+            -webkit-border-radius: 50px;
+            -moz-border-radius: 50px;
+            border-radius: 50px;
+            position: relative;
+            height: 26px;
+            width: 318px;
+        }
+        
+        .toggle_radio>* {
+            float: left;
+        }
+        
+        .toggle_radio input[type=radio] {
+            display: none;
+            /*position: fixed;*/
+        }
+        
+        .toggle_radio label {
+            font: 90%/1.618 "Source Sans Pro";
+            color: rgba(255, 255, 255, .9);
+            z-index: 0;
+            display: block;
+            width: 100px;
+            height: 20px;
+            margin: 3px 3px;
+            -webkit-border-radius: 50px;
+            -moz-border-radius: 50px;
+            border-radius: 50px;
+            cursor: pointer;
+            z-index: 1;
+            /*background: rgba(0,0,0,.1);*/
+            text-align: center;
+            /*margin: 0 2px;*/
+            /*background: blue;*/
+            /*make it blue*/
+        }
+        
+        .toggle_option_slider {
+            /*display: none;*/
+            /*background: red;*/
+            width: 100px;
+            height: 20px;
+            position: absolute;
+            top: 3px;
+            -webkit-border-radius: 50px;
+            -moz-border-radius: 50px;
+            border-radius: 50px;
+            -webkit-transition: all .4s ease;
+            -moz-transition: all .4s ease;
+            -o-transition: all .4s ease;
+            -ms-transition: all .4s ease;
+            transition: all .4s ease;
+        }
+        
+        #first_toggle:checked~.toggle_option_slider {
+            background: rgba(255, 255, 255, .3);
+            left: 3px;
+        }
+        
+        #second_toggle:checked~.toggle_option_slider {
+            background: rgba(255, 255, 255, .3);
+            left: 109px;
+        }
+        
+        #third_toggle:checked~.toggle_option_slider {
+            background: rgba(255, 255, 255, .3);
+            left: 215px;
+        }
+        /* Nghia scroll bar  */
+        
+        #NScrollspy {
+            width: 100%;
+            height: 200px;
+            height: 66vh;
+            overflow-x: hidden;
+            overflow-y: scroll;
+            margin: 0 auto;
+            box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.6);
+        }
+        
+        #NScrollspy::-webkit-scrollbar-thumb {
+            background-color: #40b4b8;
+        }
+        
+        .N-table td {
+            text-align: center;
+        }
+        
+        .N-gradient {
+            background: rgb(131, 58, 180);
+            background: linear-gradient(90deg, rgba(131, 58, 180, 1) 0%, rgba(29, 94, 253, 1) 100%, rgba(252, 176, 69, 1) 100%);
+            height: 70px;
+        }

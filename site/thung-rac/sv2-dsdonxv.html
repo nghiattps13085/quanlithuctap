@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2 danh sách đơn nộp</title>
+    <link rel="shortcut icon" href="view/images/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
+    
+</head>
+<body>
+    <header id="header" class="fixed-top shadow-sm border-bottom bg-light">
+        <div class="wrap d-flex justify-content-between align-items-center">
+            <div id="header-menu" class="col p-0">
+                <button id="sidebarToggle" class="btn btn-light border-right rounded-0 p-4">
+                            <i class="fas fa-bars"></i>
+                            <span class="d-none d-md-inline ml-3">MENU</span>
+                    </button>
+            </div>
+            <a id="header-logo" href="#" class="col text-center">
+                <img src="images/logo-2.png" alt="">
+            </a>
+            <div id="header-login" class="col p-0">
+                <div class="d-none d-lg-flex justify-content-end h-100 ">
+                    <a data-toggle="modal" href="#login" class="btn btn-light rounded-0  h-100 border-left  font-weight-500 p-4" role="button" aria-pressed="true">SINH VIÊN</a>
+                    <a data-toggle="modal" href="#login" class="btn btn-primary  rounded-0  h-100 border-left   font-weight-500 p-4" role="button" aria-pressed="true">DOANH NGHIỆP</a>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- Show box login -->
+    <div class="modal fade" id="login">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <img src="images/logo-2.png" class="w-25" alt="">
+                    <button type="button" class="close p-3" data-dismiss="modal">x</button>
+                </div>
+                <!-- Modal body -->
+                <div class="modal-body row ">
+                    <div class="d-none d-lg-inline col-6">
+                        <img src="view/images/login.jpg" alt="">
+                    </div>
+                    <div class="col-lg-6 ">
+                        <!-- <h3>Đăng Nhập</h3> -->
+                        <form action="index.php?ctrl=home" class="my-5">
+                            <div class="form-group">
+                                <label for="">Tên đăng nhập</label>
+                                <input type="text" name="user" id="" class="form-control" placeholder="" aria-describedby="helpId">
+                                <small id="helpId" class="text-muted"></small>
+                            </div>
+                            <div class="form-group">
+                                <label for="">Mật khẩu</label>
+                                <input type="password" name="pass" id="" class="form-control" placeholder="" aria-describedby="helpId">
+                                <small id="helpId" class="text-muted"></small>
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-block">Đăng nhập</button>
+                        </form>
+                        <a href="" class="text-primary">Quên mật khẩu ?</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!-- Show menu -->
+    <nav id="nav-togger" class="border shadow-lg">
+        <div class="list-group">
+            <div class="d-flex d-lg-none  list-group-item list-group-item-action p-0 mb-3">
+                <a data-toggle="modal" href="#login" class="btn btn-light rounded-0  h-100 border w-50  py-3" role="button" aria-pressed="true">SINH VIÊN</a>
+                <a data-toggle="modal" href="#login" class="btn btn-primary  rounded-0  h-100 border w-50  py-3" role="button" aria-pressed="true">DOANH NGHIỆP</a>
+            </div>
+            <button type="button" class="list-group-item list-group-item-action rounded-0   py-3 active ">Trang chủ</button>
+            <button type="button" class="list-group-item list-group-item-action rounded-0  py-3">Hỗ trợ</button>
+            <button type="button" class="list-group-item list-group-item-action rounded-0  py-3">Liên lạc</button>
+            <button type="button" class="list-group-item list-group-item-action rounded-0  py-3">Về chúng tôi</button>
+            <button type="button" class="list-group-item list-group-item-action rounded-0  py-3">Hướng dẫn đăng bài</button>
+            <button type="button" class="list-group-item list-group-item-action rounded-0  py-3">Hướng dẫn ứng tuyển</button>
+        </div>
+    </nav>
+    <div id="overlay-nav"></div>
+    <!-- NỘI DUNG CHÍNH -->
+    <main id="main">
+        <div class="container mt-3">
+            <div id="sinhvien">
+                <div class="row">
+                    <div class="h-sidebar-container shadow mr-4">
+                        <div class="h-box-left mt-3">
+                            <ul class="h-sidebar-navigation mt-0 px-3 pb-3 ">
+                                <li class="h-header">HỒ SƠ CỦA BẠN</li>
+                                <li>
+                                    <a href="#">
+                                        <svg width="1.2em" height="1.2em" viewBox="0 0 16 16" class="bi bi-person" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                            <path fill-rule="evenodd" d="M10 5a2 2 0 1 1-4 0 2 2 0 0 1 4 0zM8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm6 5c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10z"/>
+                                        </svg>
+                                        Quản lý thông tin
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <svg width="1.2em" height="1.2em" viewBox="0 0 16 16" class="bi bi-card-list" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                            <path fill-rule="evenodd" d="M14.5 3h-13a.5.5 0 0 0-.5.5v9a.5.5 0 0 0 .5.5h13a.5.5 0 0 0 .5-.5v-9a.5.5 0 0 0-.5-.5zm-13-1A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-13z"/>
+                                            <path fill-rule="evenodd" d="M5 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 5 8zm0-2.5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm0 5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5z"/>
+                                            <circle cx="3.5" cy="5.5" r=".5"/>
+                                            <circle cx="3.5" cy="8" r=".5"/>
+                                            <circle cx="3.5" cy="10.5" r=".5"/>
+                                        </svg>
+                                        Danh sách đơn xin thực tập
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <svg width="1.2em" height="1.2em" viewBox="0 0 16 16" class="bi bi-file-earmark-text" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M4 0h5.5v1H4a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V4.5h1V14a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2z"/>
+                                            <path d="M9.5 3V0L14 4.5h-3A1.5 1.5 0 0 1 9.5 3z"/>
+                                            <path fill-rule="evenodd" d="M5 11.5a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1h-2a.5.5 0 0 1-.5-.5zm0-2a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5zm0-2a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5z"/>
+                                        </svg>
+                                        Quản lý hồ sơ
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <svg width="1.2em" height="1.2em" viewBox="0 0 16 16" class="bi bi-cursor" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                            <path fill-rule="evenodd" d="M14.082 2.182a.5.5 0 0 1 .103.557L8.528 15.467a.5.5 0 0 1-.917-.007L5.57 10.694.803 8.652a.5.5 0 0 1-.006-.916l12.728-5.657a.5.5 0 0 1 .556.103zM2.25 8.184l3.897 1.67a.5.5 0 0 1 .262.263l1.67 3.897L12.743 3.52 2.25 8.184z"/>
+                                        </svg>
+                                        Tạo hồ sơ
+                                    </a>
+                                </li>
+                                <li class="h-header">VIỆC LÀM & HỖ TRỢ</li>
+                                <li>
+                                    <a href="#">
+                                        <svg width="1.2em" height="1.2em" viewBox="0 0 16 16" class="bi bi-file-earmark-richtext" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M4 0h5.5v1H4a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V4.5h1V14a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2z"/>
+                                            <path d="M9.5 3V0L14 4.5h-3A1.5 1.5 0 0 1 9.5 3z"/>
+                                            <path fill-rule="evenodd" d="M4.5 12.5A.5.5 0 0 1 5 12h3a.5.5 0 0 1 0 1H5a.5.5 0 0 1-.5-.5zm0-2A.5.5 0 0 1 5 10h6a.5.5 0 0 1 0 1H5a.5.5 0 0 1-.5-.5zm1.639-3.708l1.33.886 1.854-1.855a.25.25 0 0 1 .289-.047l1.888.974V8.5a.5.5 0 0 1-.5.5H5a.5.5 0 0 1-.5-.5V8s1.54-1.274 1.639-1.208zM6.25 6a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5z"/>
+                                        </svg>
+                                        Việc làm đã lưu
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <svg width="1.2em" height="1.2em" viewBox="0 0 16 16" class="bi bi-file-earmark-richtext" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M4 0h5.5v1H4a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V4.5h1V14a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2z"/>
+                                            <path d="M9.5 3V0L14 4.5h-3A1.5 1.5 0 0 1 9.5 3z"/>
+                                            <path fill-rule="evenodd" d="M4.5 12.5A.5.5 0 0 1 5 12h3a.5.5 0 0 1 0 1H5a.5.5 0 0 1-.5-.5zm0-2A.5.5 0 0 1 5 10h6a.5.5 0 0 1 0 1H5a.5.5 0 0 1-.5-.5zm1.639-3.708l1.33.886 1.854-1.855a.25.25 0 0 1 .289-.047l1.888.974V8.5a.5.5 0 0 1-.5.5H5a.5.5 0 0 1-.5-.5V8s1.54-1.274 1.639-1.208zM6.25 6a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5z"/>
+                                        </svg>
+                                        Việc làm ứng tuyển
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <svg width="1.2em" height="1.2em" viewBox="0 0 16 16" class="bi bi-exclamation-diamond" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                            <path fill-rule="evenodd" d="M6.95.435c.58-.58 1.52-.58 2.1 0l6.515 6.516c.58.58.58 1.519 0 2.098L9.05 15.565c-.58.58-1.519.58-2.098 0L.435 9.05a1.482 1.482 0 0 1 0-2.098L6.95.435zm1.4.7a.495.495 0 0 0-.7 0L1.134 7.65a.495.495 0 0 0 0 .7l6.516 6.516a.495.495 0 0 0 .7 0l6.516-6.516a.495.495 0 0 0 0-.7L8.35 1.134z"/>
+                                            <path d="M7.002 11a1 1 0 1 1 2 0 1 1 0 0 1-2 0zM7.1 4.995a.905.905 0 1 1 1.8 0l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 4.995z"/>
+                                        </svg>
+                                        Hướng dẫn thao tác
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <i class="far fa-sign-out-alt" aria-hidden="true"></i> Đăng xuất
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class=" col-sm-9 mt-3 mb-3">
+
+                        <div class="container"> 
+                            <h5 class="mb-3" style="border-left: 5px rgb(98, 0, 255) solid;padding: 0 5px;font-weight: 600;">DANH SÁCH ĐƠN XIN THỰC TẬP</h5>
+                            <div class="media col-sm-12 sv-12"style="border-radius: 5px;background-image: linear-gradient(-25deg, #d1d1d1 0%, #c1ecfd 100%);">
+                                <div style="margin-right: 6px;" class="col-2 col-sm-2 col-md-2 col-lg-2 col-xl-2 ">
+                                    <div class="bg-ds mt-3">
+
+                                    </div>
+                                </div>
+                                <div style="margin-right: 6px;" class="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6 ds-hva">
+                                    <a href="#"><strong><h5 class="media-heading mt-3" style="font-weight: bold;">CÔNG TY CP FPT</h5></strong>  </a>                                                           
+                                    <p style="margin-bottom:5px;" >NGÀNH NGHỀ: Hoạt động thông tin khác : web developer, graphic design.....</p>
+                                    <p style="margin-bottom:-1px;">
+                                        <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-geo-alt-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                            <path fill-rule="evenodd" d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
+                                        </svg>:
+                                      <a style="font-size: 10pt;" href="#">Toà nhà Innovation, lô 24, Công viên phần mềm Quang Trung, Quận 12, Hồ Chí Minh.</a>
+                                    </p>
+                                    <p style="margin-bottom:-1px;" class="mb-2">
+                                        <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-telephone-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                            <path fill-rule="evenodd" d="M2.267.98a1.636 1.636 0 0 1 2.448.152l1.681 2.162c.309.396.418.913.296 1.4l-.513 2.053a.636.636 0 0 0 .167.604L8.65 9.654a.636.636 0 0 0 .604.167l2.052-.513a1.636 1.636 0 0 1 1.401.296l2.162 1.681c.777.604.849 1.753.153 2.448l-.97.97c-.693.693-1.73.998-2.697.658a17.47 17.47 0 0 1-6.571-4.144A17.47 17.47 0 0 1 .639 4.646c-.34-.967-.035-2.004.658-2.698l.97-.969z"/>
+                                        </svg>:
+                                        <a style="font-size: 10pt;" href="#">(028) 3526 8799 </a>– <a style="font-size: 10pt;" href="#">(028) 62523434</a>
+                                    </p>
+                                </div>         
+                                <div  class="col-4 col-sm-4 col-md-4 col-lg-4 col-xl-4 "style="padding: 5px 15px;">
+                                    <div class="row" >
+                                        <div class="col-11 col-sm-11 col-md-11 col-lg-11 col-xl-11 mb-5 ml-5" style="padding: 5px 10px; display: flex; ">
+                                            <div class="item mr-2">
+                                                <p style="color:tomato;">Ngày</p>
+                                                <span style="margin-top: -10px;" id="days">00</span>
+                                            </div> <span style="margin-top: 29px;margin-right: 2px;" >:</span>
+                                            <div class="item mr-2">
+                                                <p style="color:tomato;">Giờ</p>
+                                                <span style="margin-top: -10px;" id="hours">00</span>
+                                            </div><span style="margin-top: 29px;margin-right: 2px;" >:</span>
+                                            <div class="item mr-2">
+                                                <p style="color:tomato;">Phút</p>
+                                                <span style="margin-top: -10px;" id="minutes">00</span>
+                                            </div><span style="margin-top: 29px;margin-right: 2px;" >:</span>
+                                            <div class="item mr-2">
+                                                <p style="color:tomato;">Giây</p>
+                                                <span style="margin-top: -10px;" id="seconds">00</span>
+                                            </div>
+                                       </div>
+                                       <div class="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6 text-center" >
+                                           <button class="buttoncn" style="width: 100%;">
+                                               chấp nhận
+                                           </button>
+                                       </div>
+                                       <div class="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6 mt-2">
+                                            <div style="color: rgb(0, 155, 13);">
+                                                <strong style="margin-left: -10px;">
+                                                    <svg width="1.4em" height="1.4em" viewBox="0 0 16 16" class="bi bi-check" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                                        <path fill-rule="evenodd" d="M10.97 4.97a.75.75 0 0 1 1.071 1.05l-3.992 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.236.236 0 0 1 .02-.022z"/>
+                                                    </svg>Đã phê duyệt
+                                                </strong>
+                                            </div>
+                                       </div>
+                                    </div>
+
+                                </div>
+                                                           
+                            </div>
+
+                            <div class="col-sm-12 ">
+                                <div class="col-sm-2 mr-center">
+                                    <hr style="background: rgb(110, 110, 110);">
+                                </div>     
+                            </div> 
+                            
+                            <div class="media col-sm-12 sv-12"style="border-radius: 5px;background-image: linear-gradient(-25deg, #d1d1d1 0%, #c1ecfd 100%);">
+                                <div style="margin-right: 6px;" class="col-2 col-sm-2 col-md-2 col-lg-2 col-xl-2 ">
+                                    <div class="bg-ds1 mt-3">
+
+                                    </div>
+                                </div>
+                                <div style="margin-right: 6px;" class="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6 ds-hva">
+                                    <a href="#"><strong><h5 class="media-heading mt-3" style="font-weight: bold;">CÔNG TY CP VINFAST</h5></strong>  </a>                                                           
+                                    <p style="margin-bottom:5px;" >NGÀNH NGHỀ: Sản xuất, kinh doanh ô tô thế hệ mới đưa con người Việt Nam vương tầm thế giới.</p>
+                                    <p style="margin-bottom:-1px;">
+                                        <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-geo-alt-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                            <path fill-rule="evenodd" d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
+                                        </svg>:
+                                      <a style="font-size: 10pt;" href="#">110/1 hẻm 5, Nguyễn Việt Hồng, P. An Phú, Q. Ninh Kiều, Tp. Cần Thơ.</a>
+                                    </p>
+                                    <p style="margin-bottom:-1px;" class="mb-2">
+                                        <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-telephone-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                            <path fill-rule="evenodd" d="M2.267.98a1.636 1.636 0 0 1 2.448.152l1.681 2.162c.309.396.418.913.296 1.4l-.513 2.053a.636.636 0 0 0 .167.604L8.65 9.654a.636.636 0 0 0 .604.167l2.052-.513a1.636 1.636 0 0 1 1.401.296l2.162 1.681c.777.604.849 1.753.153 2.448l-.97.97c-.693.693-1.73.998-2.697.658a17.47 17.47 0 0 1-6.571-4.144A17.47 17.47 0 0 1 .639 4.646c-.34-.967-.035-2.004.658-2.698l.97-.969z"/>
+                                        </svg>:
+                                        <a style="font-size: 10pt;" href="#">1900 232389</a>  
+                                    </p>
+                                </div>         
+                                <div  class="col-4 col-sm-4 col-md-4 col-lg-4 col-xl-4 "style="padding: 5px 15px;">
+                                    <div class="row" >
+                                        <div class="col-11 col-sm-11 col-md-11 col-lg-11 col-xl-11 mb-5 ml-5" style="padding: 5px 10px; display: flex; ">
+                                            <div class="item mr-2">
+                                                <p style="color:tomato;">Ngày</p>
+                                                <span style="margin-top: -10px;" id="days">00</span>
+                                            </div> <span style="margin-top: 29px;margin-right: 2px;" >:</span>
+                                            <div class="item mr-2">
+                                                <p style="color:tomato;">Giờ</p>
+                                                <span style="margin-top: -10px;" id="hours">00</span>
+                                            </div><span style="margin-top: 29px;margin-right: 2px;" >:</span>
+                                            <div class="item mr-2">
+                                                <p style="color:tomato;">Phút</p>
+                                                <span style="margin-top: -10px;" id="minutes">00</span>
+                                            </div><span style="margin-top: 29px;margin-right: 2px;" >:</span>
+                                            <div class="item mr-2">
+                                                <p style="color:tomato;">Giây</p>
+                                                <span style="margin-top: -10px;" id="seconds">00</span>
+                                            </div>
+                                       </div>
+                                       <div class="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6 text-center" >
+                                           
+                                       </div>
+                                       <div class="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6 mt-2">
+                                            <div style="color: rgb(0, 155, 13);">
+                                                <strong style="margin-left: -10px;color: red;">
+                                                    <i class="fa fa-clock-o"style="color:tomato;"></i>
+                                                    Hến hạn.
+                                                </strong>
+                                            </div>
+                                       </div>
+                                    </div>
+
+                                </div>
+                                                           
+                            </div>
+                            
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+            
+            
+        </div>
+    </main>
+    <footer id="footer " class="wrap bg-dark text-light py-3 ">
+        <div class="container ">
+            <div class="col-3 p-0 ">
+                <img src="images/logo-2.png " alt=" ">
+            </div>
+            <h3>Phòng Quan Hệ Doanh Nghiệp</h3>
+            <div class="row my-5 ">
+                <div class="col-lg-6 mb-3 ">
+                    <h5 class="pb-3 ">Thông tin trường FPT Polytechnic</h5>
+                    <div class="row text-gray ">
+                        <div class="col-lg-5 small ">
+                            <p class="font-weight-bold my-1 "><i class="fas fa-location-circle mr-1 "></i> Cơ sở Hà Nội</p>
+                            <p class="m-0 ">Tòa nhà FPT Polytechnic, Phố Trịnh Văn Bô, Nam Từ Liêm, Hà Nội</p>
+                            <p><i class="fas fa-phone-alt "></i> <u>(024) 7300 1955</u></p>
+                        </div>
+                        <div class="col-lg-5 mb-3 small ">
+                            <p class="font-weight-bold my-1 "><i class="fas fa-location-circle mr-1 "></i> Cơ sở Hồ Chí Minh</p>
+                            <p class="m-0 ">778/B1 Nguyễn Kiệm, P.4, Q. Phú Nhuận, TP. Hồ Chí Minh</p>
+                            <p><i class="fas fa-phone-alt "></i> <u> (028) 62523434</u></p>
+                        </div>
+                        <div class="col-lg-5 mb-3 small ">
+                            <p class="font-weight-bold my-1 "><i class="fas fa-location-circle mr-1 "></i> Cơ sở Đà Nẵng</p>
+                            <p class="m-0 ">Số 137 Nguyễn Thị Thập, Phường Hòa Minh, Quận Liên Chiểu, TP. Đà Nẵng</p>
+                            <p><i class="fas fa-phone-alt "></i> <u>(0236) 3710 999</u></p>
+                        </div>
+                        <div class="col-lg-5 small ">
+                            <p class="font-weight-bold my-1 "><i class="fas fa-location-circle mr-1 "></i> Cơ sở Cần Thơ</p>
+                            <p class="m-0 ">Số 288, Nguyễn Văn Linh, phường An Khánh, quận Ninh Kiều, Tp. Cần Thơ</p>
+                            <p><i class="fas fa-phone-alt "></i> <u>(0292) 7300 468</u></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-3 ">
+                    <h5 class="pb-3 ">Dành cho doanh nghiệp</h5>
+                    <div class="nav flex-column ">
+                        <a class="nav-item nav-link px-0 " href="# ">Thông tin 1 </a>
+                        <a class="nav-item nav-link px-0 " href="# ">Thông tin 2</a>
+                        <a class="nav-item nav-link px-0 " href="# ">Thông tin 3</a>
+                        <a class="nav-item nav-link px-0 " href="# ">Thông tin 4</a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-3 ">
+                    <h5 class="pb-3 ">Dành cho sinh viên</h5>
+                    <div class="nav flex-column ">
+                        <a class="nav-item nav-link px-0 " href="# ">Thông tin 1</a>
+                        <a class="nav-item nav-link px-0 " href="# ">Thông tin 2</a>
+                        <a class="nav-item nav-link px-0 " href="# ">Thông tin 3</a>
+                        <a class="nav-item nav-link px-0 " href="# ">Thông tin 4</a>
+                    </div>
+                </div>
+            </div>
+            <div class="row text-light text-center ">
+                <p class="col mt-5 ">Copyright <i class="fa fa-copyright mx-2 " aria-hidden="true "></i> 2020 Bản quyền thuộc về <b>Group 6</b></p>
+            </div>
+        </div>
+    </footer>
+    <!-- JS Boostrap -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js " integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo " crossorigin="anonymous "></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js " integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1 " crossorigin="anonymous "></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js " integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM " crossorigin="anonymous "></script>
+    <!-- My script -->
+    <script src="js/script.js "></script>
+</body>
+<script>
+    var fuT =new Date("Dec 6,2020 00:00:00:00").getTime()
+    setInterval(function(){
+        var noW = new Date().getTime()
+        var D = fuT -noW
+        var days = Math.floor(D/(1000*60*60*24))
+        var hours = Math.floor(D/(1000*60*60))
+        var minutes = Math.floor(D/(1000*60))
+        var seconds = Math.floor(D/(1000))
+        hours %=24
+        minutes %=60
+        seconds %=60
+
+        document.getElementById("days").innerText = days
+        document.getElementById("hours").innerText = hours
+        document.getElementById("minutes").innerText = minutes
+        document.getElementById("seconds").innerText = seconds
+
+    },1000)
+</script>
+</html>
